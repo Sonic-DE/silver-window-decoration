@@ -1,4 +1,4 @@
-# Klassy
+# Silver
 
 ##### Table of Contents
 [Overview](#overview)  
@@ -7,7 +7,7 @@
 >[Compile from source](#compile)  
 
 [System icon theme](#icons)  
-[Klassy Settings](#klassy-settings)  
+[Silver Settings](#silver-settings)  
 [Donations](#donations)
 
 &nbsp;
@@ -15,17 +15,17 @@
 <a name="overview"/>
 
 ## Overview
-_Klassy_ (formerly _ClassiK_/_ClassikStyles_) is a highly customizable binary Window Decoration, Application Style and Global Theme plugin for recent versions of the KDE Plasma desktop. Initially taking inspiration from the iconography of KDE 1, the _Klassy_ defaults are an attempt to create a usable and appealing look for the modern Plasma desktop. Install with the instructions below, and then make sure it is enabled in System Settings -> Appearance -> Window Decorations, in System Settings -> Appearance -> Application Style and in System Settings -> Appearance -> Icons.
+_Silver_ (formerly _Klassy_/_ClassiK_/_ClassikStyles_) is a highly customizable binary Window Decoration, Application Style and Global Theme plugin for recent versions of the Sonic Desktop. Initially taking inspiration from the iconography of KDE 1, the _Silver_ defaults are an attempt to create a usable and appealing look for the modern Sonic desktop. Install with the instructions below, and then make sure it is enabled in System Settings -> Appearance -> Window Decorations, in System Settings -> Appearance -> Application Style and in System Settings -> Appearance -> Icons.
 
 ![Screenshot of Button icons menu](screenshots/button_icon_menu.png?raw=true "Screenshot of Button icons menu")
 >(Above Preset: Glassy Klassy, Colours: Klassy Dark)
 * Also provides _Oxygen/Breeze_ and _Redmond_ button icons.
-* Provides a Window Decoration, Application Style and Icons so that icons in dockable panels, MDI applications, context menus and GTK applications consistently match the main titlebar icons (make sure to enable all 3 in your Plasma Appearance settings!):
+* Provides a Window Decoration, Application Style and Icons so that icons in dockable panels, MDI applications, context menus and GTK applications consistently match the main titlebar icons (make sure to enable all 3 in your Sonic Appearance settings!):
 > [![Watch the Klassy demo video](screenshots/video_dummy.png "Watch the Klassy demo video")](http://paulmcauley.com/kde/klassy/klassy_demo.webm)
 
 * Configurable button size, shape, translucency, colours and outlining.
 
-* Default buttons (_Klassy_ preset) are "Integrated Rounded Rectangles" with translucent outlined accent colours, with a large clickable area. These are designed to complement the "Blue Ocean" design refresh in Plasma 5.23, along with the Plasma 5.23 accent colour feature:
+* Default buttons (_Silver_ preset) are "Integrated Rounded Rectangles" with translucent outlined accent colours, with a large clickable area. These are designed to complement the "Blue Ocean" design refresh in Plasma 5.23, along with the Plasma 5.23 accent colour feature:
 > ![Default Integrated Rounded rectangle button style, dark](screenshots/highlight_gifs/icdark.gif?raw=true "Default Integrated Rounded rectangle button style, dark")
 * Alternative "Traffic lights" background colours:
 > ![Traffic lights button style, dark](screenshots/highlight_gifs/icdark_trafficlights.gif?raw=true "Traffic lights button style, dark")
@@ -63,18 +63,11 @@ _Klassy_ (formerly _ClassiK_/_ClassikStyles_) is a highly customizable binary Wi
 <a name="installation"/>
 
 ## Installation
-_Klassy_ version 6.2 requires __Plasma 6.1__, or later, so please check you have this in kinfocenter before trying to install. You can either download the pre-built packages or compile from source.
+_Silver_ version 6.2 requires __Plasma 6.1__, or later, so please check you have this in kinfocenter before trying to install. You can either download the pre-built packages or compile from source.
 <a name="prebuilt"/>
 
 ### Pre-built packages
-[Respositories are available from the Open Build Service](https://software.opensuse.org/download.html?project=home%3Apaul4us&package=klassy) for OpenSUSE, Debian/Ubuntu, Fedora, Mageia and Arch/Manjaro to keep you on the latest version.
-
-&nbsp;
-
-Raw .rpm, .deb etc. binary packages are also available from the Open Build Service link above if you choose "Grab binary packages directly".
-
-&nbsp;
-&nbsp;
+Pre-built packages will be available soon
 
 <a name="compile"/>
 
@@ -137,21 +130,20 @@ Uninstall build script:
 ./uninstall.sh
 ```
 
-&nbsp;
 <a name="icons"/>
 
 ## System icon theme
-To make your Plasma Desktop fully consistent, Klassy auto-generates "Klassy" and "Klassy Dark" system icon themes whenever a window-decoration setting changes. These add consistent titlebar button icons to certain minor context menus in Plasma, and also add consistent GTK application titlebar icons.
-> <img src="screenshots/klassy_square_icons.png" alt="Screenshot of Klassy with icon theme" width="512">
+To make your Sonic Desktop fully consistent, Silver auto-generates "Silver" and "Silver Dark" system icon themes whenever a window-decoration setting changes. These add consistent titlebar button icons to certain minor context menus in Sonic, and also add consistent GTK application titlebar icons.
+> <img src="screenshots/klassy_square_icons.png" alt="Screenshot of Silver with icon theme" width="512">
 
 These icons inherit the _Breeze_ icon theme by default, only overriding the titlebar button icons. Another icon theme may be inherited by changing the setting in the Window Decoration settings under the _System Icon Generation..._ button.
 
-<a name="klassy-settings"/>
+<a name="silver-settings"/>
 
-## Klassy Settings
-Klassy includes a settings application, `klassy-settings`. This shows Window Decoration and Application Style settings in one place.
+## Silver Settings
+Silver includes a settings application, `silver-settings`. This shows Window Decoration and Application Style settings in one place.
 
-`klassy-settings` also has command-line options to allow Preset file imports, load Presets and generate system icons. Run `klassy-settings --help` for details.
+`silver-settings` also has command-line options to allow Preset file imports, load Presets and generate system icons. Run `silver-settings --help` for details.
 
 <a name="donations"/>
 
