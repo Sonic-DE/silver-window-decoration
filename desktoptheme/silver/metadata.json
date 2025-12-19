@@ -1,0 +1,19 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "kde@paulmcauley.com",
+                "Name": "Paul A McAuley"
+            }
+        ],
+        "Category": "",
+        "Description": "Silver by Paul A McAuley (Breeze Dark with tweaked vertical panel margins)",
+        "EnabledByDefault": true,
+        "Id": "silver",
+        "License": "LGPL",
+        "Name": "Silver",
+        "Version": "6.3",
+        "Website": "https://github.com/Sonic-DE/silver-theme"
+    },
+    "X-Plasma-API": "5.0"
+}

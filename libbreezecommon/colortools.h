@@ -16,7 +16,7 @@ namespace Breeze
 {
 
 /**
- * @brief Functions to manipulate colours within Klassy
+ * @brief Functions to manipulate colours within Silver
  *        To be used as common code base across both kdecoration and kstyle.
  */
 class BREEZECOMMON_EXPORT ColorTools

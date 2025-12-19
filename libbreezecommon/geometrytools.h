@@ -15,7 +15,7 @@ namespace Breeze
 {
 
 /**
- * @brief Functions to manipulate geometry within Klassy
+ * @brief Functions to manipulate geometry within Silver
  *        To be used as common code base across both kdecoration and kstyle.
  */
 class BREEZECOMMON_EXPORT GeometryTools

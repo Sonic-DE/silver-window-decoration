@@ -19,7 +19,7 @@ DecorationSettingsProvider *DecorationSettingsProvider::s_self = nullptr;
 
 //__________________________________________________________________
 DecorationSettingsProvider::DecorationSettingsProvider()
-    : m_config(KSharedConfig::openConfig(QStringLiteral("klassy/klassyrc")))
+    : m_config(KSharedConfig::openConfig(QStringLiteral("silver/silverrc")))
     , m_presetsConfig(KSharedConfigPtr())
 {
     m_defaultSettings = InternalSettingsPtr(new InternalSettings());
@@ -71,7 +71,7 @@ InternalSettingsPtr DecorationSettingsProvider::internalSettings()
             // load window decoration preset if set
             if (!internalSettings->exceptionPreset().isEmpty()) {
                 if (!m_presetsConfig) {
-                    KSharedConfigPtr presetsConfig = KSharedConfig::openConfig(QStringLiteral("klassy/windecopresetsrc"));
+                    KSharedConfigPtr presetsConfig = KSharedConfig::openConfig(QStringLiteral("silver/windecopresetsrc"));
                     m_presetsConfig.swap(presetsConfig);
                 }
                 if (!m_presetsConfig) {

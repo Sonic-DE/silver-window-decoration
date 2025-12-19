@@ -20,7 +20,7 @@ SettingsProvider *SettingsProvider::s_self = nullptr;
 
 //__________________________________________________________________
 SettingsProvider::SettingsProvider()
-    : m_config(KSharedConfig::openConfig(QStringLiteral("klassy/klassyrc")))
+    : m_config(KSharedConfig::openConfig(QStringLiteral("silver/silverrc")))
     , m_presetsConfig(KSharedConfigPtr())
 {
     m_defaultSettings = InternalSettingsPtr(new InternalSettings());
@@ -95,7 +95,7 @@ InternalSettingsPtr SettingsProvider::internalSettings(Decoration *decoration)
             // load preset if set
             if (!internalSettings->exceptionPreset().isEmpty()) {
                 if (!m_presetsConfig) {
-                    KSharedConfigPtr presetsConfig = KSharedConfig::openConfig(QStringLiteral("klassy/windecopresetsrc"));
+                    KSharedConfigPtr presetsConfig = KSharedConfig::openConfig(QStringLiteral("silver/windecopresetsrc"));
                     m_presetsConfig.swap(presetsConfig);
                 }
                 if (!m_presetsConfig) {

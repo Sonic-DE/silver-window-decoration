@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(klassy)
+project(silver)
 set(PROJECT_VERSION "6.5")
 set(PROJECT_VERSION_MAJOR 6)
 
@@ -114,7 +114,7 @@ function(build_Qt6)
         find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED DBus)
         set(HAVE_QTDBUS ${Qt6DBus_FOUND})
 
-        option(WITH_DECORATIONS "Build Klassy window decorations for KWin" ON)
+        option(WITH_DECORATIONS "Build Silver window decorations for KWin" ON)
 
         find_package(KF6FrameworkIntegration ${KF6_MIN_VERSION} CONFIG )
         set_package_properties(KF${QT_MAJOR_VERSION}FrameworkIntegration PROPERTIES
@@ -178,17 +178,17 @@ function(build_Qt6)
     # create a Config.cmake and a ConfigVersion.cmake file and install them
     include(ECMSetupVersion)
     ecm_setup_version(${PROJECT_VERSION} VARIABLE_PREFIX BREEZE
-        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KlassyConfigVersion.cmake"
+        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/SilverConfigVersion.cmake"
     )
-    set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/Klassy")
+    set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/Silver")
 
-    configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/KlassyConfig.cmake.in"
-                                  "${CMAKE_CURRENT_BINARY_DIR}/KlassyConfig.cmake"
+    configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/SilverConfig.cmake.in"
+                                  "${CMAKE_CURRENT_BINARY_DIR}/SilverConfig.cmake"
                                   PATH_VARS KDE_INSTALL_FULL_DATADIR
                                   INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
     )
-    install(FILES  "${CMAKE_CURRENT_BINARY_DIR}/KlassyConfig.cmake"
-                   "${CMAKE_CURRENT_BINARY_DIR}/KlassyConfigVersion.cmake"
+    install(FILES  "${CMAKE_CURRENT_BINARY_DIR}/SilverConfig.cmake"
+                   "${CMAKE_CURRENT_BINARY_DIR}/SilverConfigVersion.cmake"
             DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
             COMPONENT Devel
     )

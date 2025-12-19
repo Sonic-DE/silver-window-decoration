@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////
 // main.cpp
-// klassy-settings executable
+// silver-settings executable
 // -------------------
 //
 // SPDX-FileCopyrightText: 2010 Hugo Pereira Da Costa <hugo.pereira@free.fr>
@@ -37,10 +37,10 @@ CommandLineProcessResult processComandLine(QApplication &app, QCommandLineParser
 //__________________________________________
 int main(int argc, char *argv[])
 {
-    KLocalizedString::setApplicationDomain("klassy_style_config");
+    KLocalizedString::setApplicationDomain("silver_style_config");
     QApplication app(argc, argv);
-    app.setApplicationName(QStringLiteral("klassy-settings"));
-    app.setApplicationVersion(Breeze::klassyLongVersion());
+    app.setApplicationName(QStringLiteral("silver-settings"));
+    app.setApplicationVersion(Breeze::silverLongVersion());
 
     QCommandLineParser parser;
     CommandLineProcessResult commandLineResult = processComandLine(app, parser);
@@ -52,10 +52,10 @@ int main(int argc, char *argv[])
     }
 
     KCMultiDialog dialog;
-    dialog.setWindowTitle(i18n("Klassy Settings"));
+    dialog.setWindowTitle(i18n("Silver Settings"));
     dialog.setMinimumWidth(800);
-    dialog.addModule(KPluginMetaData(QStringLiteral("kstyle_config/klassystyleconfig")));
-    dialog.addModule(KPluginMetaData(QStringLiteral("org.kde.kdecoration3.kcm/kcm_klassydecoration.so")));
+    dialog.addModule(KPluginMetaData(QStringLiteral("kstyle_config/silverstyleconfig")));
+    dialog.addModule(KPluginMetaData(QStringLiteral("org.kde.kdecoration3.kcm/kcm_silverdecoration.so")));
     dialog.show();
 
     const auto children = dialog.findChildren<QAbstractScrollArea *>();
@@ -74,7 +74,7 @@ CommandLineProcessResult processComandLine(QApplication &app, QCommandLineParser
 
     QCommandLineOption importOption(QStringList() << "i"
                                                   << "import-preset",
-                                    i18n("Import a Klassy .klpw Preset File with filename <preset filename>."),
+                                    i18n("Import a Silver .klpw Preset File with filename <preset filename>."),
                                     i18n("preset filename"));
     parser.addOption(importOption);
 
@@ -86,18 +86,18 @@ CommandLineProcessResult processComandLine(QApplication &app, QCommandLineParser
 
     QCommandLineOption forceOption(QStringList() << "f"
                                                  << "force-import-invalid-version",
-                                   i18n("Force the import of a preset file from a different Klassy version."));
+                                   i18n("Force the import of a preset file from a different Silver version."));
     parser.addOption(forceOption);
 
     QCommandLineOption generateIcons(QStringList() << "g"
                                                    << "generate-system-icons",
-                                     i18n("Generate klassy and klassy-dark system icons."));
+                                     i18n("Generate silver and silver-dark system icons."));
     parser.addOption(generateIcons);
 
     parser.process(app);
 
-    char const *configFile = "klassy/klassyrc";
-    char const *presetsConfigFile = "klassy/windecopresetsrc";
+    char const *configFile = "silver/silverrc";
+    char const *presetsConfigFile = "silver/windecopresetsrc";
     QTextStream output(stdout);
     bool commandSet = false;
     if (parser.isSet(importOption)) {
@@ -108,23 +108,23 @@ CommandLineProcessResult processComandLine(QApplication &app, QCommandLineParser
         PresetsErrorFlag importErrors =
             PresetsModel::importPreset(presetsConfig.data(), parser.value(importOption), presetName, errorMessage, parser.isSet(forceOption));
         if (importErrors == PresetsErrorFlag::InvalidGlobalGroup) {
-            output << i18n("ERROR: Invalid Klassy Preset file to import at \"") << parser.value(importOption) << i18n("\".") << Qt::endl;
+            output << i18n("ERROR: Invalid Silver Preset file to import at \"") << parser.value(importOption) << i18n("\".") << Qt::endl;
             return {CommandLineProcessResult::Status::Error};
         }
 
         if (importErrors == PresetsErrorFlag::InvalidVersion) {
             output << i18n("ERROR: The file to import at \"") << parser.value(importOption)
-                   << i18n("\" was created for a different version of Klassy.\n To force import, use the --force-import-invalid-version option.") << Qt::endl;
+                   << i18n("\" was created for a different version of Silver.\n To force import, use the --force-import-invalid-version option.") << Qt::endl;
             return {CommandLineProcessResult::Status::Error};
         }
 
         if (importErrors == PresetsErrorFlag::InvalidGroup) {
-            output << i18n("ERROR: No preset group found in Klassy Preset file at \"") << parser.value(importOption) << i18n("\".") << Qt::endl;
+            output << i18n("ERROR: No preset group found in Silver Preset file at \"") << parser.value(importOption) << i18n("\".") << Qt::endl;
             return {CommandLineProcessResult::Status::Error};
         }
 
         if (importErrors == PresetsErrorFlag::InvalidKey) {
-            output << i18n("ERROR: Invalid key \"") << errorMessage << i18n("\" in Klassy Preset file at \"") << parser.value(importOption) << i18n("\".")
+            output << i18n("ERROR: Invalid key \"") << errorMessage << i18n("\" in Silver Preset file at \"") << parser.value(importOption) << i18n("\".")
                    << Qt::endl;
             return {CommandLineProcessResult::Status::Error};
         }
@@ -158,10 +158,10 @@ CommandLineProcessResult processComandLine(QApplication &app, QCommandLineParser
         InternalSettingsPtr internalSettings = InternalSettingsPtr(new InternalSettings());
         internalSettings->load();
 
-        // auto-generate the klassy and klassy-dark system icons
+        // auto-generate the silver and silver-dark system icons
         SystemIconGenerator iconGenerator(internalSettings);
         iconGenerator.generate();
-        output << i18n("klassy and klassy-dark system icons generated.") << Qt::endl;
+        output << i18n("silver and silver-dark system icons generated.") << Qt::endl;
     }
 
     if (commandSet) {

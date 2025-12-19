@@ -20,7 +20,7 @@ void DecorationExceptionList::readConfig(KSharedConfig::Ptr config, const bool r
     _exceptions.clear();
     _defaultExceptions.clear();
 
-    // set the default exceptions that are bundled with Klassy
+    // set the default exceptions that are bundled with Silver
     InternalSettingsPtr defaultException0(new InternalSettings());
     defaultException0->setExceptionWindowPropertyType(InternalSettings::EnumExceptionWindowPropertyType::ExceptionWindowClassName);
     defaultException0->setExceptionWindowPropertyPattern("");

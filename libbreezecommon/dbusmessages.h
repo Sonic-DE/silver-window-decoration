@@ -24,23 +24,23 @@ public:
 
     static void kstyleReloadDecorationConfig()
     {
-        // needed for klassy application style to reload shadows
+        // needed for silver application style to reload shadows
         QDBusMessage message(
-            QDBusMessage::createSignal(QStringLiteral("/KlassyDecoration"), QStringLiteral("org.kde.Klassy.Style"), QStringLiteral("reparseConfiguration")));
+            QDBusMessage::createSignal(QStringLiteral("/SilverDecoration"), QStringLiteral("org.kde.Silver.Style"), QStringLiteral("reparseConfiguration")));
         QDBusConnection::sessionBus().send(message);
     }
 
     static void kstyleReloadConfig()
     {
         QDBusMessage message(
-            QDBusMessage::createSignal(QStringLiteral("/KlassyStyle"), QStringLiteral("org.kde.Klassy.Style"), QStringLiteral("reparseConfiguration")));
+            QDBusMessage::createSignal(QStringLiteral("/SilverStyle"), QStringLiteral("org.kde.Silver.Style"), QStringLiteral("reparseConfiguration")));
         QDBusConnection::sessionBus().send(message);
     }
 
     static void updateDecorationColorCache()
     {
-        QDBusMessage message(QDBusMessage::createSignal(QStringLiteral("/KlassyDecoration"),
-                                                        QStringLiteral("org.kde.Klassy.Style"),
+        QDBusMessage message(QDBusMessage::createSignal(QStringLiteral("/SilverDecoration"),
+                                                        QStringLiteral("org.kde.Silver.Style"),
                                                         QStringLiteral("updateDecorationColorCache")));
         QDBusConnection::sessionBus().send(message);
     }

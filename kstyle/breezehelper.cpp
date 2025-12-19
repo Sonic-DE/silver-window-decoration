@@ -1234,7 +1234,7 @@ void Helper::initSliderStyleOption(const QSlider *slider, QStyleOptionSlider *op
     // Can't fetch activeSubControls, because it's private API
 }
 
-// modified from https://github.com/qt/qtbase/blob/dev/src/widgets/widgets/qscrollbar.cpp for Klassy
+// modified from https://github.com/qt/qtbase/blob/dev/src/widgets/widgets/qscrollbar.cpp for Silver
 void Helper::initScrollBarStyleOption(const QScrollBar *scrollBar, QStyleOptionSlider *option) const
 {
     option->initFrom(scrollBar);
@@ -1917,7 +1917,7 @@ bool Helper::shouldDrawToolsArea(const QWidget *widget) const
     }
     if (borderSize != "None" && borderSize != "NoSides") {
         return false;
-    }*/ //commented out for klassy as we can set the borders to titlebar colour to avoid any such visual glitches
+    }*/ //commented out for silver as we can set the borders to titlebar colour to avoid any such visual glitches
     return true;
 }
 

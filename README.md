@@ -1,14 +1,14 @@
-# Klassy
+# Silver
 
 ##### Table of Contents
-[Overview](#overview)  
-[Installation](#installation)  
->[Pre-built packages](#prebuilt)  
->[Compile from source](#compile)  
+[Overview](#overview)
+[Installation](#installation)
+>[Pre-built packages](#prebuilt)
+>[Compile from source](#compile)
 >[Gentoo Linux package](#gentoo-linux-package)
 
-[System icon theme](#icons)  
-[Klassy Settings](#klassy-settings)  
+[System icon theme](#icons)
+[Silver Settings](#silver-settings)
 [Donations](#donations)
 
 &nbsp;
@@ -16,21 +16,20 @@
 <a name="overview"/>
 
 ## Overview
-_Klassy_ (formerly _ClassiK_/_ClassikStyles_) is a highly customizable binary Window Decoration, Application Style and Global Theme plugin for recent versions of the KDE Plasma desktop. 
+_Silver_ (formerly _ClassiK_/_ClassikStyles_) is a highly customizable binary Window Decoration, Application Style and Global Theme plugin for recent versions of the KDE Plasma desktop.
 
-Klassy configuration with the default _Kisweet_ preset:
-![Klassy configuration with the default Kisweet preset](screenshots/kisweet_preset.png?raw=true "Klassy configuration with the default Kisweet preset]")
+Silver configuration with the default _Kisweet_ preset:
+![Silver configuration with the default Kisweet preset](screenshots/kisweet_preset.png?raw=true "Silver configuration with the default Kisweet preset]")
 
 ![Kisweet window controls annotated](screenshots/kisweet_window_controls.svg?raw=true "Kisweet window controls annotated")
 
 
-Install with the instructions below, and then make sure _Klassy_ is enabled in System Settings -> Appearance -> Window Decorations, in System Settings -> Appearance -> Application Style and in System Settings -> Appearance -> Icons.
+Install with the instructions below, and then make sure _Silver_ is enabled in System Settings -> Appearance -> Window Decorations, in System Settings -> Appearance -> Application Style and in System Settings -> Appearance -> Icons.
 
 ![Screenshot of Button icons menu](screenshots/button_icon_menu.png?raw=true "Screenshot of Button icons menu")
->(Above Preset: Glassy Klassy, Colours: Klassy Dark)
+>(Above Preset: Glassy Silver, Colours: Silver Dark)
 * Also provides _Oxygen/Breeze_ and _Redmond_ button icons.
 * Provides a Window Decoration, Application Style and Icons so that icons in dockable panels, MDI applications, context menus and GTK applications consistently match the main titlebar icons (make sure to enable all 3 in your Plasma Appearance settings!):
-> [![Watch the Klassy demo video](screenshots/video_dummy.png "Watch the Klassy demo video")](http://paulmcauley.com/kde/klassy/klassy_demo.webm)
 
 * Configurable button size, shape, translucency, colours and outlining.
 
@@ -72,7 +71,7 @@ Install with the instructions below, and then make sure _Klassy_ is enabled in S
 <a name="installation"/>
 
 ## Installation
-_Klassy_ master branch requires Plasma 6.5, or later, so please check you have this in kinfocenter before trying to install. For the master branch you should compile from source.
+_Silver_ master branch requires Plasma 6.5, or later, so please check you have this in kinfocenter before trying to install. For the master branch you should compile from source.
 
 <a name="compile"/>
 
@@ -114,11 +113,11 @@ sudo dnf install "cmake(KF5Config)" "cmake(KF5CoreAddons)" "cmake(KF5FrameworkIn
 ### Step 2: Then download, build and install
 Download, build and install from source script:
 ```
-git clone https://github.com/paulmcauley/klassy
+git clone https://github.com/Sonic-DE/silver-theme
 ```
 
 ```
-cd klassy
+cd silver
 ```
 
 ```
@@ -137,8 +136,8 @@ Uninstall build script:
 
 &nbsp;
 ### Gentoo Linux package
-There is a package available for Klassy in the [guru](https://github.com/gentoo/guru) repository.
-You can install Klassy on Gentoo Linux by following these steps.
+There is a package available for Silver in the [guru](https://github.com/gentoo/guru) repository.
+You can install Silver on Gentoo Linux by following these steps.
 
 First, install the `eselect repository` module with:
 ```
@@ -157,29 +156,29 @@ sudo emaint sync -r guru
 
 Add the package keywords to `/etc/portage/package.accept_keywords`:
 ```
-echo "=gui-apps/klassy-9999::guru **" | sudo tee /etc/portage/package.accept_keywords/klassy
+echo "=gui-apps/silver-9999::guru **" | sudo tee /etc/portage/package.accept_keywords/silver
 ```
 
 Finally, compile & install the package with:
 ```
-sudo emerge -av =gui-apps/klassy-9999::guru
+sudo emerge -av =gui-apps/silver-9999::guru
 ```
 
 &nbsp;
 <a name="icons"/>
 
 ## System icon theme
-To make your Plasma Desktop fully consistent, Klassy auto-generates "Klassy" and "Klassy Dark" system icon themes whenever a window-decoration setting changes. These add consistent titlebar button icons to certain minor context menus in Plasma, and also add consistent GTK application titlebar icons.
-> <img src="screenshots/klassy_square_icons.png" alt="Screenshot of Klassy with icon theme" width="512">
+To make your Plasma Desktop fully consistent, Silver auto-generates "Silver" and "Silver Dark" system icon themes whenever a window-decoration setting changes. These add consistent titlebar button icons to certain minor context menus in Plasma, and also add consistent GTK application titlebar icons.
+> <img src="screenshots/silver_square_icons.png" alt="Screenshot of Silver with icon theme" width="512">
 
 These icons inherit the _Breeze_ icon theme by default, only overriding the titlebar button icons. Another icon theme may be inherited by changing the setting in the Window Decoration settings under the _System Icon Generation..._ button.
 
-<a name="klassy-settings"/>
+<a name="silver-settings"/>
 
-## Klassy Settings
-Klassy includes a settings application, `klassy-settings`. This shows Window Decoration and Application Style settings in one place.
+## Silver Settings
+Silver includes a settings application, `silver-settings`. This shows Window Decoration and Application Style settings in one place.
 
-`klassy-settings` also has command-line options to allow Preset file imports, load Presets and generate system icons. Run `klassy-settings --help` for details.
+`silver-settings` also has command-line options to allow Preset file imports, load Presets and generate system icons. Run `silver-settings --help` for details.
 
 <a name="donations"/>
 

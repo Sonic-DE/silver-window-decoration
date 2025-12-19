@@ -9,7 +9,7 @@
 
 #define KLASSY_DECORATION_DEBUG_MODE 0
 #define KLASSY_STYLE_DEBUG_MODE 0
-#define KLASSY_QDEBUG_OUTPUT_PATH_RELATIVE_HOME "/Desktop/klassy_debug.txt"
+#define KLASSY_QDEBUG_OUTPUT_PATH_RELATIVE_HOME "/Desktop/silver_debug.txt"
 
 #include "breezecommon_export.h"
 #include "breezesettings.h"
@@ -26,7 +26,7 @@ namespace Breeze
 
 // COMMON-------------------------------------------------------------------
 
-QString BREEZECOMMON_EXPORT klassyLongVersion();
+QString BREEZECOMMON_EXPORT silverLongVersion();
 
 //* standard pen widths
 struct BREEZECOMMON_EXPORT PenWidth {
@@ -49,7 +49,7 @@ struct BREEZECOMMON_EXPORT PenWidth {
 };
 
 // copied from KDecoration3/src/decorationdefines.h -- needs to be kept in sync
-// originally Klassy linked directly to KDecoration3 but this did not work on the combined Qt5/Qt6 build on Plasma 6 with Qt5 applications
+// originally Silver linked directly to KDecoration3 but this did not work on the combined Qt5/Qt6 build on Plasma 6 with Qt5 applications
 enum class DecorationButtonType {
     /**
      * The Menu button requests showing the window menu on left or right click.

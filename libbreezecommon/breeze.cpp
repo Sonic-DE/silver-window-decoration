@@ -9,7 +9,7 @@
 namespace Breeze
 {
 
-QString klassyLongVersion()
+QString silverLongVersion()
 {
     QString version;
 

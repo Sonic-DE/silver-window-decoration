@@ -57,7 +57,7 @@ void LoadPreset::initPresetsList()
 
 void LoadPreset::addButtonClicked()
 {
-    m_addDialog->setWindowTitle(i18n("Add Preset - Klassy Settings"));
+    m_addDialog->setWindowTitle(i18n("Add Preset - Silver Settings"));
     m_addDialog->m_ui->presetName->clear();
     m_addDialog->m_ui->presetName->setFocus();
 
@@ -67,8 +67,8 @@ void LoadPreset::addButtonClicked()
 
     QRegularExpression re("\\w+");
     while (!re.match(m_addDialog->m_ui->presetName->text()).hasMatch()) {
-        QMessageBox::warning(this, i18n("Warning - Klassy Settings"), i18n("Please provide a name for the Preset"));
-        m_addDialog->setWindowTitle(i18n("Add Preset - Klassy Settings"));
+        QMessageBox::warning(this, i18n("Warning - Silver Settings"), i18n("Please provide a name for the Preset"));
+        m_addDialog->setWindowTitle(i18n("Add Preset - Silver Settings"));
         m_addDialog->m_ui->presetName->setFocus();
         if (m_addDialog->exec() == QDialog::Rejected) {
             return;
@@ -79,7 +79,7 @@ void LoadPreset::addButtonClicked()
     if ((m_ui->presetsList->findItems(m_addDialog->m_ui->presetName->text(), Qt::MatchExactly)).count()) {
         // confirmation dialog
         QMessageBox messageBox(QMessageBox::Question,
-                               i18n("Question - Klassy Settings"),
+                               i18n("Question - Silver Settings"),
                                i18n("A preset with the name \"") + m_addDialog->m_ui->presetName->text() + i18n("\" already exists. Overwrite?"),
                                QMessageBox::Yes | QMessageBox::Cancel);
         messageBox.button(QMessageBox::Yes)->setText(i18n("Overwrite"));
@@ -128,7 +128,7 @@ void LoadPreset::removeButtonClicked()
 
     // confirmation dialog
     QMessageBox messageBox(QMessageBox::Question,
-                           i18n("Question - Klassy Settings"),
+                           i18n("Question - Silver Settings"),
                            i18n("Remove \"") + m_ui->presetsList->selectedItems().first()->text() + i18n("\" preset?"),
                            QMessageBox::Yes | QMessageBox::Cancel);
     messageBox.button(QMessageBox::Yes)->setText(i18n("Remove"));
@@ -144,7 +144,7 @@ void LoadPreset::removeButtonClicked()
 
 void LoadPreset::importButtonClicked()
 {
-    QStringList files = QFileDialog::getOpenFileNames(this, i18n("Select Klassy Preset to Import"), "", i18n("Klassy Preset (*.klpw)"));
+    QStringList files = QFileDialog::getOpenFileNames(this, i18n("Select Silver Preset to Import"), "", i18n("Silver Preset (*.klpw)"));
     for (QString filePath : files) {
         QString presetName;
         QString error;
@@ -153,7 +153,7 @@ void LoadPreset::importButtonClicked()
         if (PresetsModel::isPresetFromFilePresent(m_presetsConfiguration.data(), filePath, presetName)) {
             // confirmation dialog
             QMessageBox messageBox(QMessageBox::Question,
-                                   i18n("Question - Klassy Settings"),
+                                   i18n("Question - Silver Settings"),
                                    i18n("A preset with the name \"") + presetName + i18n("\" already exists. Overwrite?"),
                                    QMessageBox::Yes | QMessageBox::Cancel);
             messageBox.button(QMessageBox::Yes)->setText(i18n("Overwrite"));
@@ -168,7 +168,7 @@ void LoadPreset::importButtonClicked()
 
         if (importErrors == PresetsErrorFlag::InvalidGlobalGroup) {
             QMessageBox msgBox;
-            msgBox.setText(i18n("Invalid Klassy Preset file at \"") + filePath + i18n("\"."));
+            msgBox.setText(i18n("Invalid Silver Preset file at \"") + filePath + i18n("\"."));
             msgBox.exec();
             continue;
         }
@@ -176,9 +176,9 @@ void LoadPreset::importButtonClicked()
         if (importErrors == PresetsErrorFlag::InvalidVersion) {
             // confirmation dialog
             QMessageBox messageBox(QMessageBox::Question,
-                                   i18n("Question - Klassy Settings"),
+                                   i18n("Question - Silver Settings"),
                                    i18n("The file to import at \"") + filePath
-                                       + i18n("\" was created for a different version of Klassy.\n Try to import anyway?"),
+                                       + i18n("\" was created for a different version of Silver.\n Try to import anyway?"),
                                    QMessageBox::Yes | QMessageBox::Cancel);
             messageBox.button(QMessageBox::Yes)->setText(i18n("Continue Import"));
             messageBox.setDefaultButton(QMessageBox::Cancel);
@@ -194,14 +194,14 @@ void LoadPreset::importButtonClicked()
 
         if (importErrors == PresetsErrorFlag::InvalidGroup) {
             QMessageBox msgBox;
-            msgBox.setText(i18n("No preset group found in Klassy Preset file at \"") + filePath + i18n("\"."));
+            msgBox.setText(i18n("No preset group found in Silver Preset file at \"") + filePath + i18n("\"."));
             msgBox.exec();
             continue;
         }
 
         if (importErrors == PresetsErrorFlag::InvalidKey) {
             QMessageBox msgBox;
-            msgBox.setText(i18n("Invalid key \"") + error + i18n("\" in Klassy Preset file at \"") + filePath + i18n("\"."));
+            msgBox.setText(i18n("Invalid key \"") + error + i18n("\" in Silver Preset file at \"") + filePath + i18n("\"."));
             msgBox.exec();
             continue;
         }
@@ -220,7 +220,7 @@ void LoadPreset::exportButtonClicked()
     fileBaseName = fileBaseName.simplified(); // replace whitespace with spaces
     fileBaseName.replace(" ", "_"); // replace spaces with underscores
 
-    QString filePath = QFileDialog::getSaveFileName(this, i18n("Export Klassy Preset to File"), "~/" + fileBaseName + ".klpw", i18n("Klassy Preset (*.klpw)"));
+    QString filePath = QFileDialog::getSaveFileName(this, i18n("Export Silver Preset to File"), "~/" + fileBaseName + ".klpw", i18n("Silver Preset (*.klpw)"));
     if (filePath.isEmpty())
         return;
     QDir dir;

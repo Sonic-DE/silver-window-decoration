@@ -34,8 +34,8 @@
 
 // needed to display images when qrc is statically linked
 // must be in global namespace to work
-void initKlassydecorationConfigQrc();
-void cleanupKlassydecorationConfigQrc();
+void initSilverdecorationConfigQrc();
+void cleanupSilverdecorationConfigQrc();
 
 namespace Breeze
 {

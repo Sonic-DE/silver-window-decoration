@@ -683,7 +683,7 @@ void ButtonColors::save(const bool reloadKwinConfig)
         DBusMessages::updateDecorationColorCache();
         DBusMessages::kwinReloadConfig();
         // DBusMessages::kstyleReloadDecorationConfig(); //should reload anyway
-        // auto-generate the klassy and klassy-dark system icons
+        // auto-generate the silver and silver-dark system icons
 
         static_cast<ConfigWidget *>(m_parent)->generateSystemIcons();
     }

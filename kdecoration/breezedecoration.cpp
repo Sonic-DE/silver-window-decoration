@@ -289,7 +289,7 @@ void Decoration::init()
     auto c = window();
 
     reconfigureMain(true);
-    
+
     // active state change animation
     // It is important start and end value are of the same type, hence 0.0 and not just 0
     m_animation->setStartValue(0.0);
@@ -319,7 +319,7 @@ void Decoration::init()
             updateShadow(false, true, true);
     });
 
-    // use DBus connection to update on Klassy configuration change
+    // use DBus connection to update on Silver configuration change
     auto dbus = QDBusConnection::sessionBus();
 
     dbus.connect(QString(),
@@ -716,17 +716,17 @@ void Decoration::setGlobalLookAndFeelOptions(QString lookAndFeelPackageName)
         m_internalSettings->setLookAndFeelSet(lookAndFeelPackageName);
         m_internalSettings->save();
 
-        // associate the look-and-feel package with a Klassy window decoration preset
+        // associate the look-and-feel package with a Silver window decoration preset
         const QHash<QString, QString> lfPackagePresetNames{
-            {QStringLiteral("org.kde.klassykisweetdarkleftpanel.desktop"), QStringLiteral("Kisweet")},
-            {QStringLiteral("org.kde.klassykisweetlightleftpanel.desktop"), QStringLiteral("Kisweet")},
-            {QStringLiteral("org.kde.klassykisweetdarkbottompanel.desktop"), QStringLiteral("Kisweet")},
-            {QStringLiteral("org.kde.klassykisweetlightbottompanel.desktop"), QStringLiteral("Kisweet")},
+            {QStringLiteral("org.kde.silverkisweetdarkleftpanel.desktop"), QStringLiteral("Kisweet")},
+            {QStringLiteral("org.kde.silverkisweetlightleftpanel.desktop"), QStringLiteral("Kisweet")},
+            {QStringLiteral("org.kde.silverkisweetdarkbottompanel.desktop"), QStringLiteral("Kisweet")},
+            {QStringLiteral("org.kde.silverkisweetlightbottompanel.desktop"), QStringLiteral("Kisweet")},
         };
 
         auto presetNameIt = lfPackagePresetNames.find(lookAndFeelPackageName);
-        if (presetNameIt != lfPackagePresetNames.end()) { // if matching look-and-feel-package, load the associated Klassy window decoration preset
-            system("klassy-settings -w \"" + presetNameIt.value().toUtf8() + "\" &");
+        if (presetNameIt != lfPackagePresetNames.end()) { // if matching look-and-feel-package, load the associated Silver window decoration preset
+            system("silver-settings -w \"" + presetNameIt.value().toUtf8() + "\" &");
         }
     }
 }
@@ -1498,7 +1498,7 @@ void Decoration::updateShadow(const bool forceUpdateCache, bool noCache, const b
     // if the decoration is painting, abandon setting the shadow.
     // Setting the shadow at the same time as paint() being executed causes a EGL_BAD_SURFACE error and a SEGFAULT from Plasma 5.26 onwards.
     if (m_painting) {
-        qWarning("Klassy: paint() occurring at same time as shadow creation for \"%s\" - abandoning setting shadow to prevent EGL_BAD_SURFACE.",
+        qWarning("Silver: paint() occurring at same time as shadow creation for \"%s\" - abandoning setting shadow to prevent EGL_BAD_SURFACE.",
                  c->caption().toLatin1().data());
         return;
     }
