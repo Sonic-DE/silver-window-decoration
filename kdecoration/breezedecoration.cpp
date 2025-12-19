@@ -719,10 +719,10 @@ void Decoration::setGlobalLookAndFeelOptions(QString lookAndFeelPackageName)
 
         // associate the look-and-feel package with a Silver window decoration preset
         const QHash<QString, QString> lfPackagePresetNames{
-            {QStringLiteral("org.kde.silverkisweetdarkleftpanel.desktop"), QStringLiteral("Kisweet")},
-            {QStringLiteral("org.kde.silverkisweetlightleftpanel.desktop"), QStringLiteral("Kisweet")},
-            {QStringLiteral("org.kde.silverkisweetdarkbottompanel.desktop"), QStringLiteral("Kisweet")},
-            {QStringLiteral("org.kde.silverkisweetlightbottompanel.desktop"), QStringLiteral("Kisweet")},
+            {QStringLiteral("org.kde.klassykairndarkleftpanel.desktop"), QStringLiteral("Kairn (Left Panel)")},
+            {QStringLiteral("org.kde.klassykairnlightleftpanel.desktop"), QStringLiteral("Kairn (Left Panel)")},
+            {QStringLiteral("org.kde.klassykairndarkbottompanel.desktop"), QStringLiteral("Kairn")},
+            {QStringLiteral("org.kde.klassykairnlightbottompanel.desktop"), QStringLiteral("Kairn")},
         };
 
         auto presetNameIt = lfPackagePresetNames.find(lookAndFeelPackageName);
