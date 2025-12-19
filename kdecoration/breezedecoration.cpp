@@ -33,6 +33,7 @@
 #include <QDBusPendingCallWatcher>
 #include <QDBusPendingReply>
 #include <QPainter>
+#include <QProcess>
 #include <QTextStream>
 #include <QTimer>
 
@@ -726,7 +727,7 @@ void Decoration::setGlobalLookAndFeelOptions(QString lookAndFeelPackageName)
 
         auto presetNameIt = lfPackagePresetNames.find(lookAndFeelPackageName);
         if (presetNameIt != lfPackagePresetNames.end()) { // if matching look-and-feel-package, load the associated Silver window decoration preset
-            system("silver-settings -w \"" + presetNameIt.value().toUtf8() + "\" &");
+            QProcess::startDetached(QStringLiteral("silver-settings"), {QStringLiteral("-w"), presetNameIt.value()});
         }
     }
 }

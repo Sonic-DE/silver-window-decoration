@@ -72,32 +72,28 @@ CommandLineProcessResult processComandLine(QApplication &app, QCommandLineParser
     parser.addHelpOption();
     parser.addVersionOption();
 
-    QCommandLineOption importOption(QStringList() << "i"
-                                                  << "import-preset",
+    QCommandLineOption importOption(QStringList() << QStringLiteral("i") << QStringLiteral("import-preset"),
                                     i18n("Import a Silver .klpw Preset File with filename <preset filename>."),
                                     i18n("preset filename"));
     parser.addOption(importOption);
 
-    QCommandLineOption loadWindecoPresetOption(QStringList() << "w"
-                                                             << "load-windeco-preset",
+    QCommandLineOption loadWindecoPresetOption(QStringList() << QStringLiteral("w") << QStringLiteral("load-windeco-preset"),
                                                i18n("Load the Window Decoration Preset, with name <preset name>."),
                                                i18n("preset name"));
     parser.addOption(loadWindecoPresetOption);
 
-    QCommandLineOption forceOption(QStringList() << "f"
-                                                 << "force-import-invalid-version",
+    QCommandLineOption forceOption(QStringList() << QStringLiteral("f") << QStringLiteral("force-import-invalid-version"),
                                    i18n("Force the import of a preset file from a different Silver version."));
     parser.addOption(forceOption);
 
-    QCommandLineOption generateIcons(QStringList() << "g"
-                                                   << "generate-system-icons",
+    QCommandLineOption generateIcons(QStringList() << QStringLiteral("g") << QStringLiteral("generate-system-icons"),
                                      i18n("Generate silver and silver-dark system icons."));
     parser.addOption(generateIcons);
 
     parser.process(app);
 
-    char const *configFile = "silver/silverrc";
-    char const *presetsConfigFile = "silver/windecopresetsrc";
+    QString const configFile = QStringLiteral("silver/silverrc");
+    QString const presetsConfigFile = QStringLiteral("silver/windecopresetsrc");
     QTextStream output(stdout);
     bool commandSet = false;
     if (parser.isSet(importOption)) {

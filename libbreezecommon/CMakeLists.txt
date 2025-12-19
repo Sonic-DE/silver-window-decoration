@@ -57,11 +57,7 @@ if(HAVE_QTDBUS)
     )
 endif()
 
-if(QT_MAJOR_VERSION STREQUAL "5")
-    target_link_libraries(silvercommon${QT_MAJOR_VERSION} PUBLIC KF5::ConfigWidgets)
-else()
-    target_link_libraries(silvercommon${QT_MAJOR_VERSION} PUBLIC KF6::ColorScheme)
-endif()
+target_link_libraries(silvercommon${QT_MAJOR_VERSION} PUBLIC KF6::ColorScheme)
 
 set_target_properties(silvercommon${QT_MAJOR_VERSION} PROPERTIES
     VERSION ${PROJECT_VERSION}

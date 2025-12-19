@@ -15,7 +15,9 @@
 #endif
 
 #include <QDialog>
+#include <QObject>
 #include <QRegularExpression>
+#include <QWidget>
 
 extern "C" {
 Q_DECL_EXPORT QWidget *allocate_kstyle_config(QWidget *parent)
@@ -54,12 +56,12 @@ StyleConfig::StyleConfig(QWidget *parent)
 
 #if KLASSY_GIT_MASTER
     // set the long version string if from the git master
-    _version->setText("v" + QString(KLASSY_VERSION) + ".git");
+    _version->setText(QStringLiteral("v") + QStringLiteral(SILVER_VERSION) + QStringLiteral(".git"));
 
 #else
     // set shortened version string in UI if an official release
     QRegularExpression re("\\d+\\.\\d+");
-    QRegularExpressionMatch match = re.match(KLASSY_VERSION);
+    QRegularExpressionMatch match = re.match(SILVER_VERSION);
     if (match.hasMatch()) {
         QString matched = match.captured(0);
         _version->setText("v" + matched);
@@ -157,7 +159,7 @@ void StyleConfig::defaults()
     StyleConfigData::self()->setDefaults();
     load();
 
-    emit changed(!isDefaults());
+    Q_EMIT changed(!isDefaults());
 }
 
 bool StyleConfig::isDefaults()
@@ -246,7 +248,7 @@ void StyleConfig::updateChanged()
     else if (_menuOpacity->value() != StyleConfigData::menuOpacity())
         modified = true;
 
-    emit changed(modified);
+    Q_EMIT changed(modified);
 }
 
 //__________________________________________________________________
