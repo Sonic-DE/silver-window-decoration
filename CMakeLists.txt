@@ -3,9 +3,10 @@ project(silver)
 set(PROJECT_VERSION "6.5")
 set(PROJECT_VERSION_MAJOR 6)
 
-add_definitions( -DSILVER_VERSION="${PROJECT_VERSION}" -DKLASSY_GIT_MASTER=1)
+add_definitions( -DSILVER_VERSION="${PROJECT_VERSION}" -DSILVER_GIT_MASTER=1)
 
 set(KF6_MIN_VERSION "6.14.0")
+set(KDE_COMPILERSETTINGS_LEVEL "5.82")
 set(QT_MIN_VERSION "6.8.0")
 
 include(GenerateExportHeader)

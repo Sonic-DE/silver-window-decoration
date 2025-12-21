@@ -14,7 +14,7 @@ QString silverLongVersion()
     QString version;
 
     version = QStringLiteral(SILVER_VERSION);
-#if KLASSY_GIT_MASTER
+#if SILVER_GIT_MASTER
     version += QStringLiteral(".git");
 #endif
     return version;

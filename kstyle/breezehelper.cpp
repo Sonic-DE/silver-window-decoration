@@ -7,7 +7,7 @@
 
 #include "breezehelper.h"
 
-#if KLASSY_STYLE_DEBUG_MODE
+#if SILVER_STYLE_DEBUG_MODE
 #include "setqdebug_logging.h"
 #endif
 
@@ -56,8 +56,8 @@ Helper::Helper(KSharedConfig::Ptr config)
     , _kwinConfig(KSharedConfig::openConfig(QStringLiteral("kwinrc")))
     , _decorationConfig(DecorationSettingsProvider::self()->internalSettings())
 {
-#if KLASSY_STYLE_DEBUG_MODE
-    setDebugOutput(KLASSY_QDEBUG_OUTPUT_PATH_RELATIVE_HOME);
+#if SILVER_STYLE_DEBUG_MODE
+    setDebugOutput(SILVER_QDEBUG_OUTPUT_PATH_RELATIVE_HOME);
 #endif
 }
 

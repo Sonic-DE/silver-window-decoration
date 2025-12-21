@@ -54,7 +54,7 @@ StyleConfig::StyleConfig(QWidget *parent)
         }
     }
 
-#if KLASSY_GIT_MASTER
+#if SILVER_GIT_MASTER
     // set the long version string if from the git master
     _version->setText(QStringLiteral("v") + QStringLiteral(SILVER_VERSION) + QStringLiteral(".git"));
 

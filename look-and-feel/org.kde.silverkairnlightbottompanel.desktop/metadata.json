@@ -9,17 +9,10 @@
         ],
         "Category": "",
         "Description": "Light theme with traditional panel at the bottom and labelled tasks",
-<<<<<<<< HEAD:look-and-feel/org.kde.silverkisweetlightbottompanel.desktop/metadata.json
-        "Id": "org.kde.silverkisweetlightbottompanel.desktop",
-        "License": "LGPL 2.1",
-        "Name": "Kisweet Light - Bottom Panel (Silver)",
-        "Website": "https://github.com/Sonic-DE/silver-theme"
-========
         "Id": "org.kde.silverkairnlightbottompanel.desktop",
         "License": "LGPL 2.1",
-        "Name": "Kairn Light - Bottom Panel (Klassy)",
-        "Website": "https://github.com/paulmcauley/silver"
->>>>>>>> upstream/master:look-and-feel/org.kde.silverkairnlightbottompanel.desktop/metadata.json
+        "Name": "Kairn Light - Bottom Panel (Silver)",
+        "Website": "https://github.com/Sonic-DE/silver-theme"
     },
     "X-Plasma-APIVersion": "2"
 }

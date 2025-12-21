@@ -427,6 +427,7 @@
                     <value>KeepAbove</value>
                 </values>
             </parameter>
+            <default>""</default>
         </entry>
 
         <entry name="ButtonOverrideColorsInactive$(ButtonOverrideColorsInactiveButtonType)" type="String">
@@ -444,6 +445,7 @@
                     <value>KeepAbove</value>
                 </values>
             </parameter>
+            <default>""</default>
         </entry>
 
         <entry name="ButtonOverrideColorsLockStates$(ButtonOverrideColorsLockStatesActive)" type="String">
@@ -453,6 +455,7 @@
                     <value>Active</value>
                 </values>
             </parameter>
+            <default>""</default>
         </entry>
 
     </group>

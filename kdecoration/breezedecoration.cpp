@@ -9,7 +9,7 @@
 
 #include "breezedecoration.h"
 
-#if KLASSY_DECORATION_DEBUG_MODE
+#if SILVER_DECORATION_DEBUG_MODE
 #include "setqdebug_logging.h"
 #endif
 
@@ -155,8 +155,8 @@ Decoration::Decoration(QObject *parent, const QVariantList &args)
     , m_overrideOutlineFromButtonAnimation(new QVariantAnimation(this))
 
 {
-#if KLASSY_DECORATION_DEBUG_MODE
-    setDebugOutput(KLASSY_QDEBUG_OUTPUT_PATH_RELATIVE_HOME);
+#if SILVER_DECORATION_DEBUG_MODE
+    setDebugOutput(SILVER_QDEBUG_OUTPUT_PATH_RELATIVE_HOME);
 #endif
     if (!s_kdeGlobalConfig) {
         s_kdeGlobalConfig = KSharedConfig::openConfig();

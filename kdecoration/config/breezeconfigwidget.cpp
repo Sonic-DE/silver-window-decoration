@@ -128,7 +128,7 @@ ConfigWidget::ConfigWidget(QObject *parent, const KPluginMetaData &data, const Q
     // update the horizontal header icons in-case the icon style has changed
     connect(this, &ConfigWidget::saved, m_buttonColorsDialog, &ButtonColors::load);
 
-#if KLASSY_GIT_MASTER
+#if SILVER_GIT_MASTER
     // set the long version string if from the git master
     m_ui.version->setText(QStringLiteral("v") + silverLongVersion());
 

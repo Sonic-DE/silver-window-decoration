@@ -65,7 +65,7 @@ ecm_qt_declare_logging_category(silver${QT_MAJOR_VERSION}
     HEADER
         breeze_logging.h
     IDENTIFIER
-        KLASSY
+        SILVER
     CATEGORY_NAME
         silver${QT_MAJOR_VERSION}
     DEFAULT_SEVERITY

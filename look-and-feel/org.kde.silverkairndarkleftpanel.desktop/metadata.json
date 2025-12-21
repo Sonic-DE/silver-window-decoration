@@ -9,17 +9,10 @@
         ],
         "Category": "",
         "Description": "Dark theme with panel on the left",
-<<<<<<<< HEAD:look-and-feel/org.kde.silverkisweetdarkleftpanel.desktop/metadata.json
-        "Id": "org.kde.silverkisweetdarkleftpanel.desktop",
-        "License": "LGPL 2.1",
-        "Name": "Kisweet Dark - Left Panel (Silver)",
-        "Website": "https://github.com/Sonic-DE/silver-theme"
-========
         "Id": "org.kde.silverkairndarkleftpanel.desktop",
         "License": "LGPL 2.1",
-        "Name": "Kairn Dark - Left Panel (Klassy)",
-        "Website": "https://github.com/paulmcauley/silver"
->>>>>>>> upstream/master:look-and-feel/org.kde.silverkairndarkleftpanel.desktop/metadata.json
+        "Name": "Kairn Dark - Left Panel (Silver)",
+        "Website": "https://github.com/Sonic-DE/silver-theme"
     },
     "X-Plasma-APIVersion": "2"
 }

@@ -116,13 +116,13 @@ void SystemIconGenerator::generateIconThemeDir(const QString themeDirPath,
 
             if (i == 0) {
                 if (!iconThemeGroup.readEntry("Directories", "").isEmpty()) {
-                    iconThemeGroup.writeEntry("Directories", QStringLiteral("%1,%2").arg(iconThemeGroup.readEntry("Directories"), svgDirName));
+                    iconThemeGroup.writeEntry("Directories", QStringLiteral("%1,%2").arg(iconThemeGroup.readEntry("Directories") + QStringLiteral(",") + svgDirName));
                 } else {
                     iconThemeGroup.writeEntry("Directories", svgDirName);
                 }
             } else {
                 if (!iconThemeGroup.readEntry("ScaledDirectories", "").isEmpty()) {
-                    iconThemeGroup.writeEntry("ScaledDirectories", QStringLiteral("%1,%2").arg(iconThemeGroup.readEntry("ScaledDirectories"), svgDirName));
+                    iconThemeGroup.writeEntry("ScaledDirectories", QStringLiteral("%1,%2").arg(iconThemeGroup.readEntry("ScaledDirectories") + QStringLiteral(",") + svgDirName));
                 } else {
                     iconThemeGroup.writeEntry("ScaledDirectories", svgDirName);
                 }
